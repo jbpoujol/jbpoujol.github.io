@@ -2,9 +2,11 @@ import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MonitorInterceptor } from './interceptors/monitor.interceptor';
+import { HeaderComponent } from './components/molecules/header/header.component';
+import { FooterComponent } from './components/molecules/footer/footer.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [HeaderComponent, FooterComponent],
   imports: [CommonModule],
   providers: [
     {
@@ -13,6 +15,7 @@ import { MonitorInterceptor } from './interceptors/monitor.interceptor';
       multi: true,
     },
   ],
+  exports: [HeaderComponent, FooterComponent],
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
