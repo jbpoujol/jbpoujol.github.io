@@ -4,10 +4,11 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MonitorInterceptor } from './interceptors/monitor.interceptor';
 import { HeaderComponent } from './components/molecules/header/header.component';
 import { FooterComponent } from './components/molecules/footer/footer.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent],
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
