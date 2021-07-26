@@ -1,0 +1,20 @@
+#home-container {
+  height: 100vh;
+}
+
+h1 {
+  position: absolute;
+  top: 20vh;
+  left: 2.5%
+}
+
+h1 .prenom {
+  margin: 3vw 0 -3vw;
+}
+
+h1 span {
+  font: 500 normal 16vw/.95 "Helvetica Now Display";
+  letter-spacing: -0.77vw;
+  display: inline-block;
+  padding: 0 0 3vw;
+}
