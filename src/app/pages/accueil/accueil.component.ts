@@ -108,7 +108,6 @@ export class AccueilComponent implements OnInit, AfterViewInit {
         scrollTrigger: {
           trigger: this.prenom.nativeElement,
           scrub: true,
-          markers: true,
           start: '-200px top',
         },
         duration: 1.5,
@@ -122,7 +121,6 @@ export class AccueilComponent implements OnInit, AfterViewInit {
         scrollTrigger: {
           trigger: this.nom.nativeElement,
           scrub: true,
-          markers: true,
           start: '40% center',
         },
         duration: 1.2,
