@@ -55,14 +55,15 @@ export class AccueilComponent {
 
       this.renderer.addClass(this.prenom?.nativeElement, 'op-violet');
       this.renderer.addClass(this.nom?.nativeElement, 'op-jaune');
-    } else if (this.lastScroll - newValue > 100) {
+    } else if (this.lastScroll - newValue > 0) {
       // Up
       this.renderer.removeClass(this.prenom?.nativeElement, 'op-violet');
       this.renderer.removeClass(this.nom?.nativeElement, 'op-jaune');
 
       this.renderer.addClass(this.prenom?.nativeElement, 'op-jaune');
       this.renderer.addClass(this.nom?.nativeElement, 'op-violet');
-    } else if (this.lastScroll < 100) {
+    }
+    if (window.pageYOffset === 0) {
       this.renderer.removeClass(this.prenom?.nativeElement, 'op-jaune');
       this.renderer.removeClass(this.nom?.nativeElement, 'op-violet');
       this.renderer.removeClass(this.prenom?.nativeElement, 'op-violet');
