@@ -1,22 +1,30 @@
+import { DOCUMENT } from '@angular/common';
 import {
   AfterViewInit,
   Component,
   ElementRef,
   HostListener,
+  Inject,
   OnInit,
   Renderer2,
   ViewChild,
   ViewChildren,
   ViewContainerRef,
 } from '@angular/core';
+
 declare var Typewriter: any;
+
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-accueil',
   templateUrl: './accueil.component.html',
   styleUrls: ['./accueil.component.scss'],
 })
-export class AccueilComponent implements AfterViewInit {
+export class AccueilComponent implements OnInit, AfterViewInit {
   @ViewChild('prenom', { static: true, read: ElementRef }) prenom:
     | ElementRef<HTMLElement>
     | undefined;
@@ -29,12 +37,22 @@ export class AccueilComponent implements AfterViewInit {
 
   lastScroll = 0;
 
-  constructor(private renderer: Renderer2) {}
+  constructor(
+    @Inject(DOCUMENT) private document: Document,
+    private renderer: Renderer2
+  ) {}
+
+  ngOnInit(): void {
+    this.disableScroll(true);
+    this.sectionOneScrollAnimations();
+
+    this.initAnimations();
+  }
 
   ngAfterViewInit() {
     var typewriter = new Typewriter(this.typewriterElement?.nativeElement, {
       loop: true,
-      delay: 75,
+      delay: 90,
     });
 
     this.renderer.addClass(this.typewriterElement?.nativeElement, 'tw');
@@ -51,21 +69,71 @@ export class AccueilComponent implements AfterViewInit {
       .start();
   }
 
-  isElementInView(el: HTMLElement, dividend = 1) {
-    const elementTop = el.getBoundingClientRect().top;
-    return (
-      elementTop <=
-      (window.innerHeight || document.documentElement.clientHeight) / dividend
-    );
+  disableScroll(disabled: boolean): void {
+    const body = this.document.querySelector('body');
+    if (body) {
+      if (disabled) {
+        body.style.overflowY = 'hidden';
+      } else {
+        body.style.overflowY = 'auto';
+      }
+    }
   }
 
-  isElementOutofView(el: HTMLElement) {
-    const elementTop = el.getBoundingClientRect().top;
-    return (
-      elementTop > (window.innerHeight || document.documentElement.clientHeight)
-    );
+  initAnimations(): void {
+    if (this.prenom) {
+      gsap.from(this.prenom.nativeElement.childNodes, {
+        delay: 0.4,
+        duration: 1.5,
+        y: -650,
+        opacity: 0,
+        stagger: 0.15,
+      });
+    }
+    if (this.nom) {
+      gsap.from(this.nom.nativeElement.childNodes, {
+        delay: 0.7,
+        duration: 1.2,
+        y: -750,
+        opacity: 0,
+        stagger: 0.1,
+        onComplete: () => this.disableScroll(false),
+      });
+    }
   }
 
+  sectionOneScrollAnimations(): void {
+    if (this.prenom) {
+      gsap.to(this.prenom.nativeElement.childNodes, {
+        scrollTrigger: {
+          trigger: this.prenom.nativeElement,
+          scrub: true,
+          markers: true,
+          start: '-200px top',
+        },
+        duration: 1.5,
+        y: -650,
+        opacity: 0,
+        stagger: 0.15,
+      });
+    }
+    if (this.nom) {
+      gsap.to(this.nom.nativeElement.childNodes, {
+        scrollTrigger: {
+          trigger: this.nom.nativeElement,
+          scrub: true,
+          markers: true,
+          start: '40% center',
+        },
+        duration: 1.2,
+        y: -750,
+        opacity: 0.3,
+        stagger: 0.1,
+      });
+    }
+  }
+
+  /* 
   @HostListener('document:scroll', ['$event'])
   onScroll(event: Event) {
     // Get the new Value
@@ -96,5 +164,5 @@ export class AccueilComponent implements AfterViewInit {
     }
     // Update the old value
     this.lastScroll = newValue;
-  }
+  } */
 }
