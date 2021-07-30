@@ -85,7 +85,7 @@ export class AccueilComponent implements OnInit, AfterViewInit {
       gsap.from(this.prenom.nativeElement.childNodes, {
         delay: 0.4,
         duration: 1.5,
-        y: -650,
+        y: -450,
         opacity: 0,
         stagger: 0.15,
       });
