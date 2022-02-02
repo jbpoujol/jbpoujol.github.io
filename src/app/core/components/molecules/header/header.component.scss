@@ -58,7 +58,7 @@
   justify-content: center;
 }
 
-.menu-wrap .menu>div {
+.menu-wrap .menu .menu-wrapper {
   background-color: #181818;
   border-radius: 50%;
   width: 200vw;
@@ -73,7 +73,6 @@
 
 .menu-wrap .menu>div>div {
   text-align: center;
-  max-width: 90vw;
   max-height: 100vh;
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -92,7 +91,7 @@
   transition: color 0.1s ease;
 }
 
-.menu-item:hover {
+.menu-item:hover, .link-active {
   color: #ffb510 !important;
 }
 
@@ -138,4 +137,19 @@
 .ham:hover .line{
   stroke: #ffb510;
   transition: 0.6s ease
+}
+hr {
+  width:100vw;
+}
+
+.social {
+  width: 100px;
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  a:hover {
+    color: #ffb510 !important;
+  }
 }

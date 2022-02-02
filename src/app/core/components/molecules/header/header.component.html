@@ -5,20 +5,24 @@
     <path class="line bottom" d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
   </svg>
   <div class="menu">
-    <div>
+    <div class="menu-wrapper">
       <div>
         <ul>
-          <li><a class="menu-item" routerLink="" (click)="onNavigate()">Accueil</a></li>
+          <li><a class="menu-item" routerLink="/home" (click)="onNavigate()" routerLinkActive="link-active">Home</a></li>
           <hr class="text-white">
-          <li><a class="menu-item" routerLink="a-propos" (click)="onNavigate()">A propos</a></li>
+          <li><a class="menu-item" routerLink="about" (click)="onNavigate()" routerLinkActive="link-active">About</a></li>
           <hr class="text-white">
-          <li><a class="menu-item" routerLink="projets" (click)="onNavigate()">Projets</a></li>
+          <li><a class="menu-item" routerLink="projects" (click)="onNavigate()" routerLinkActive="link-active">Projects</a></li>
           <hr class="text-white">
-          <li><a class="menu-item" routerLink="experience" (click)="onNavigate()">Expérience</a></li>
+          <li><a class="menu-item" routerLink="experience" (click)="onNavigate()" routerLinkActive="link-active">Experience</a></li>
           <hr class="text-white">
-          <li><a class="menu-item" routerLink="contact" (click)="onNavigate()">Contact</a></li>
+          <li><a class="menu-item" routerLink="contact" (click)="onNavigate()" routerLinkActive="link-active">Contact</a></li>
         </ul>
       </div>
+    </div>
+    <div class="social">
+      <a class="github text-white" href="https://github.com/jbpoujol" target="_blank" rel="noreferrer noopener"><fa-icon [icon]="faGithub" size="lg"></fa-icon></a>
+      <a class="linkedin text-white" href="https://www.linkedin.com/in/jbpoujol/" target="_blank" rel="noreferrer noopener"><fa-icon [icon]="faLinkedIn" size="lg"></fa-icon></a>
     </div>
   </div>
 </div>
