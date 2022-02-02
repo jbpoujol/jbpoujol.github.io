@@ -6,6 +6,8 @@ import {
   Renderer2,
   ViewChild,
 } from '@angular/core';
+import { Container, Main } from 'tsparticles';
+import { options } from './config/particles.options';
 
 declare var Typewriter: any;
 
@@ -17,12 +19,23 @@ declare var Typewriter: any;
 export class AccueilComponent implements OnInit, AfterViewInit {
   @ViewChild('tw') typewriterElement: ElementRef | undefined;
 
+  id = 'tsparticles';
+  particlesOptions = options;
+
   constructor(private renderer: Renderer2) {}
 
   ngOnInit(): void {}
 
   ngAfterViewInit() {
     this.initTypeWriter();
+  }
+
+  particlesLoaded(container: Container): void {
+    console.log(container);
+  }
+
+  particlesInit(main: Main): void {
+    // Starting from 1.19.0 you can add custom presets or shape here, using the current tsParticles instance (main)
   }
 
   initTypeWriter() {

@@ -20,8 +20,10 @@
     "@angular/router": "~13.2.0",
     "@types/gsap": "^3.0.0",
     "bootstrap": "^5.0.1",
+    "ng-particles": "^2.22.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.1.0",
+    "tsparticles": "^1.39.2",
     "typewriter-effect": "^2.18.0",
     "zone.js": "~0.11.4"
   },
