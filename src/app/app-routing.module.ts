@@ -31,10 +31,8 @@ const routes: Routes = [
   },
   {
     path: '**',
-    loadChildren: () =>
-      import('./pages/not-founded/not-founded.module').then(
-        (m) => m.NotFoundedModule
-      ),
+    redirectTo: 'home',
+    pathMatch: 'full',
   },
 ];
 
