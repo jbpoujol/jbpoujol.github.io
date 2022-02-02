@@ -1,13 +1,13 @@
-import { DOCUMENT } from '@angular/common';
 import {
   AfterViewInit,
   Component,
   ElementRef,
-  Inject,
   OnInit,
   Renderer2,
   ViewChild,
 } from '@angular/core';
+import { Container, Main } from 'tsparticles';
+import { options } from './config/particles.options';
 
 declare var Typewriter: any;
 
@@ -17,26 +17,28 @@ declare var Typewriter: any;
   styleUrls: ['./accueil.component.scss'],
 })
 export class AccueilComponent implements OnInit, AfterViewInit {
-  @ViewChild('prenom', { static: true, read: ElementRef }) prenom:
-    | ElementRef<HTMLElement>
-    | undefined;
-
-  @ViewChild('nom', { static: true, read: ElementRef }) nom:
-    | ElementRef<HTMLElement>
-    | undefined;
-
   @ViewChild('tw') typewriterElement: ElementRef | undefined;
 
-  lastScroll = 0;
+  id = 'tsparticles';
+  particlesOptions = options;
 
-  constructor(
-    @Inject(DOCUMENT) private document: Document,
-    private renderer: Renderer2
-  ) {}
+  constructor(private renderer: Renderer2) {}
 
   ngOnInit(): void {}
 
   ngAfterViewInit() {
+    this.initTypeWriter();
+  }
+
+  particlesLoaded(container: Container): void {
+    console.log(container);
+  }
+
+  particlesInit(main: Main): void {
+    // Starting from 1.19.0 you can add custom presets or shape here, using the current tsParticles instance (main)
+  }
+
+  initTypeWriter() {
     var typewriter = new Typewriter(this.typewriterElement?.nativeElement, {
       loop: true,
       delay: 90,

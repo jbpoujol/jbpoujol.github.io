@@ -1,6 +1,6 @@
 <section id="home-container">
+  <ng-particles [id]="id" [options]="particlesOptions" (particlesLoaded)="particlesLoaded($event)" (particlesInit)="particlesInit($event)"></ng-particles>
   <div class="box">
-
       <div class="title">
           <span class="block"></span>
           <h1>
@@ -27,12 +27,13 @@
             <span class="point"></span>
           </h1>
       </div>
-
       <div class="role">
           <div class="block"></div>
           <p #tw>UI Dev designer</p>
       </div>
+  </div>
+  <div id="contact-btn">    
+    <button class="button-48" role="button" role="button" routerLink="/contact"><span class="text">Contact Me!</span></button>
 
   </div>
-  
 </section>

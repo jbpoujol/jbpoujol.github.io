@@ -5,10 +5,11 @@ import { MonitorInterceptor } from './interceptors/monitor.interceptor';
 import { HeaderComponent } from './components/molecules/header/header.component';
 import { FooterComponent } from './components/molecules/footer/footer.component';
 import { RouterModule } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, FontAwesomeModule],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
