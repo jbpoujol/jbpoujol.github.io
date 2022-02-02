@@ -1,9 +1,7 @@
-import { DOCUMENT } from '@angular/common';
 import {
   AfterViewInit,
   Component,
   ElementRef,
-  Inject,
   OnInit,
   Renderer2,
   ViewChild,
@@ -17,26 +15,17 @@ declare var Typewriter: any;
   styleUrls: ['./accueil.component.scss'],
 })
 export class AccueilComponent implements OnInit, AfterViewInit {
-  @ViewChild('prenom', { static: true, read: ElementRef }) prenom:
-    | ElementRef<HTMLElement>
-    | undefined;
-
-  @ViewChild('nom', { static: true, read: ElementRef }) nom:
-    | ElementRef<HTMLElement>
-    | undefined;
-
   @ViewChild('tw') typewriterElement: ElementRef | undefined;
 
-  lastScroll = 0;
-
-  constructor(
-    @Inject(DOCUMENT) private document: Document,
-    private renderer: Renderer2
-  ) {}
+  constructor(private renderer: Renderer2) {}
 
   ngOnInit(): void {}
 
   ngAfterViewInit() {
+    this.initTypeWriter();
+  }
+
+  initTypeWriter() {
     var typewriter = new Typewriter(this.typewriterElement?.nativeElement, {
       loop: true,
       delay: 90,
