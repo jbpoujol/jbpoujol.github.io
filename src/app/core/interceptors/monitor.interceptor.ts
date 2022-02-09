@@ -1,13 +1,13 @@
-import { Injectable } from '@angular/core';
 import {
-  HttpRequest,
-  HttpHandler,
   HttpEvent,
+  HttpHandler,
   HttpInterceptor,
+  HttpRequest
 } from '@angular/common/http';
+import { EnvironmentService } from '../services/environment.service';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
-import { EnvironmentService } from '../services/environment.service';
 
 @Injectable()
 export class MonitorInterceptor implements HttpInterceptor {

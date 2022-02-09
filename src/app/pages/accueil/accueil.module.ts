@@ -1,22 +1,21 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { AccueilComponent } from './accueil.component';
 import { RouterModule, Routes } from '@angular/router';
+import { AccueilComponent } from './accueil.component';
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { NgParticlesModule } from 'ng-particles';
 
 const accueilRoutes: Routes = [
   {
     path: '',
-    component: AccueilComponent,
-  },
+    component: AccueilComponent
+  }
 ];
-
 @NgModule({
   declarations: [AccueilComponent],
   imports: [
     CommonModule,
     NgParticlesModule,
-    RouterModule.forChild(accueilRoutes),
-  ],
+    RouterModule.forChild(accueilRoutes)
+  ]
 })
 export class AccueilModule {}

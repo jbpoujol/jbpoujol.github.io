@@ -2,46 +2,35 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
-  OnInit,
   Renderer2,
-  ViewChild,
+  ViewChild
 } from '@angular/core';
-import { Container, Main } from 'tsparticles';
 import { options } from './config/particles.options';
 
-declare var Typewriter: any;
+declare const Typewriter: any;
 
 @Component({
   selector: 'app-accueil',
   templateUrl: './accueil.component.html',
-  styleUrls: ['./accueil.component.scss'],
+  styleUrls: ['./accueil.component.scss']
 })
-export class AccueilComponent implements OnInit, AfterViewInit {
+export class AccueilComponent implements AfterViewInit {
   @ViewChild('tw') typewriterElement: ElementRef | undefined;
 
   id = 'tsparticles';
-  particlesOptions = options;
+
+  particlesOptions: any = options;
 
   constructor(private renderer: Renderer2) {}
-
-  ngOnInit(): void {}
 
   ngAfterViewInit() {
     this.initTypeWriter();
   }
 
-  particlesLoaded(container: Container): void {
-    console.log(container);
-  }
-
-  particlesInit(main: Main): void {
-    // Starting from 1.19.0 you can add custom presets or shape here, using the current tsParticles instance (main)
-  }
-
   initTypeWriter() {
-    var typewriter = new Typewriter(this.typewriterElement?.nativeElement, {
+    const typewriter = new Typewriter(this.typewriterElement?.nativeElement, {
       loop: true,
-      delay: 90,
+      delay: 90
     });
 
     this.renderer.addClass(this.typewriterElement?.nativeElement, 'tw');

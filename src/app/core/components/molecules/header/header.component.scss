@@ -31,16 +31,16 @@
   transform: rotate(45deg);
 }
 
-.hamRotate.active~.menu {
+.hamRotate.active ~ .menu {
   visibility: visible;
 }
 
-.hamRotate.active~.menu>div {
+.hamRotate.active ~ .menu > div {
   transform: scale(1);
   transition-duration: 0.75s;
 }
 
-.hamRotate.active~.menu>div>div {
+.hamRotate.active ~ .menu > div > div {
   opacity: 1;
   transition: opacity 0.4s ease 0.4s;
 }
@@ -71,27 +71,28 @@
   transition: all 0.4s ease;
 }
 
-.menu-wrap .menu>div>div {
+.menu-wrap .menu > div > div {
   text-align: center;
   max-height: 100vh;
   opacity: 0;
   transition: opacity 0.4s ease;
 }
 
-.menu-wrap .menu>div>div>ul>li {
+.menu-wrap .menu > div > div > ul > li {
   list-style: none;
   color: #fff;
   font-size: 1.8rem;
   padding: 1rem;
 }
 
-.menu-wrap .menu>div>div>ul>li>a {
+.menu-wrap .menu > div > div > ul > li > a {
   color: inherit;
   text-decoration: none;
   transition: color 0.1s ease;
 }
 
-.menu-item:hover, .link-active {
+.menu-item:hover,
+.link-active {
   color: #ffb510 !important;
 }
 
@@ -110,8 +111,8 @@
   transition: stroke-dasharray 1s, stroke-dashoffset 1s;
   stroke: #fff;
   stroke-width: 5.5;
-  stroke-linecap: round;  
-  transition: 0.6s ease
+  stroke-linecap: round;
+  transition: 0.6s ease;
 }
 
 .ham .top {
@@ -134,12 +135,12 @@
   transition: 0.6s ease;
   stroke: #fff;
 }
-.ham:hover .line{
+.ham:hover .line {
   stroke: #ffb510;
-  transition: 0.6s ease
+  transition: 0.6s ease;
 }
 hr {
-  width:100vw;
+  width: 100vw;
 }
 
 .social {

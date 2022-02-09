@@ -1,17 +1,17 @@
-import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ExperienceComponent } from './experience.component';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
 
 const experienceRoutes: Routes = [
   {
     path: '',
-    component: ExperienceComponent,
-  },
+    component: ExperienceComponent
+  }
 ];
 
 @NgModule({
   declarations: [ExperienceComponent],
-  imports: [CommonModule, RouterModule.forChild(experienceRoutes)],
+  imports: [CommonModule, RouterModule.forChild(experienceRoutes)]
 })
 export class ExperienceModule {}

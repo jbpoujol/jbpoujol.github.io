@@ -1,8 +1,8 @@
+import { IEnvironment, LogLevel, environment } from '@environment';
 import { Injectable } from '@angular/core';
-import { environment, IEnvironment, LogLevel } from '@environment';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class EnvironmentService implements IEnvironment {
   get production(): boolean {

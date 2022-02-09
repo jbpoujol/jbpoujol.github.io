@@ -25,7 +25,7 @@
         height: inherit;
         background: #ffb510;
         position: absolute;
-        animation: mainBlock 2s cubic-bezier(.74, .06, .4, .92) forwards;
+        animation: mainBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
         display: flex;
       }
 
@@ -43,24 +43,24 @@
         position: relative;
 
         .point {
-          width:0px;
+          width: 0px;
           height: 0px;
           -webkit-border-radius: 50%;
           -moz-border-radius: 50%;
           border-radius: 50%;
           background: #ffb510;
-          -webkit-animation: load 0.6s cubic-bezier(.74, .06, .4, .92) forwards;
-          animation: popIn 0.8s cubic-bezier(.74, .06, .4, .92) forwards;
+          -webkit-animation: load 0.6s cubic-bezier(0.74, 0.06, 0.4, 0.92)
+            forwards;
+          animation: popIn 0.8s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
           animation-delay: 2s;
           margin-left: 5px;
           margin-top: -10px;
           position: absolute;
           bottom: 13px;
           right: -12px;
-
         }
 
-        .letter:hover div{
+        .letter:hover div {
           color: #ffb510;
           animation: rubberBand 1s ease-out;
         }
@@ -82,7 +82,7 @@
         height: inherit;
         background: #e91e63;
         position: absolute;
-        animation: secBlock 2s cubic-bezier(.74, .06, .4, .92) forwards;
+        animation: secBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
         animation-delay: 2s;
         display: flex;
       }
@@ -91,7 +91,7 @@
         animation: secFadeIn 2s forwards;
         animation-delay: 3.2s;
         opacity: 0;
-         font-weight: 600;
+        font-weight: 600;
         font-family: 'Lato';
         color: #eee;
         font-size: 14px;
@@ -102,20 +102,14 @@
   }
 }
 
-
-
-
-
 @keyframes mainBlock {
   0% {
     width: 0%;
     left: 0;
-
   }
   50% {
     width: 100%;
     left: 0;
-
   }
   100% {
     width: 0;
@@ -127,12 +121,10 @@
   0% {
     width: 0%;
     left: 0;
-
   }
   50% {
     width: 100%;
     left: 0;
-
   }
   100% {
     width: 0;
@@ -149,7 +141,6 @@
   }
 }
 
-
 @keyframes popIn {
   0% {
     width: 0px;
@@ -165,24 +156,23 @@
     opacity: 1;
     bottom: 45px;
   }
-   65% {
-      width: 7px;
+  65% {
+    width: 7px;
     height: 7px;
-      bottom: 0px;
-      width: 15px
-   }
-   80% {
-      width: 10px;
+    bottom: 0px;
+    width: 15px;
+  }
+  80% {
+    width: 10px;
     height: 10px;
-      bottom: 20px
-   }
+    bottom: 20px;
+  }
   100% {
     width: 7px;
     height: 7px;
     background: #ffb510;
     border: 0px solid #222;
     bottom: 13px;
-
   }
 }
 
@@ -195,16 +185,14 @@
   }
 }
 
-
 @keyframes top {
   0% {
     opacity: 0;
-     bottom: -80px
+    bottom: -80px;
   }
   100% {
     opacity: 1;
-     bottom: 0px
-
+    bottom: 0px;
   }
 }
 
@@ -253,10 +241,10 @@ ng-particles {
   z-index: -90000;
 }
 
-#contact-btn{
+#contact-btn {
   position: absolute;
   bottom: 36%;
-  left:50%;
+  left: 50%;
   transform: translateX(-50%);
   animation: 1s fadeIn forwards;
   animation-delay: 2s;
@@ -280,7 +268,7 @@ ng-particles {
   color: #ffb510;
   cursor: pointer;
   display: inline-block;
-  font-family: Clarkson,Helvetica,sans-serif;
+  font-family: Clarkson, Helvetica, sans-serif;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0;
@@ -294,30 +282,33 @@ ng-particles {
   text-decoration: none;
   text-rendering: geometricprecision;
   text-transform: uppercase;
-  transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);
+  transition: opacity 300ms cubic-bezier(0.694, 0, 0.335, 1),
+    background-color 100ms cubic-bezier(0.694, 0, 0.335, 1),
+    color 100ms cubic-bezier(0.694, 0, 0.335, 1);
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
   vertical-align: baseline;
   white-space: nowrap;
 
-  &:hover {    
-  color: #222;
+  &:hover {
+    color: #222;
   }
 }
 
 .button-48:before {
-  animation: opacityFallbackOut .5s step-end forwards;
+  animation: opacityFallbackOut 0.5s step-end forwards;
   backface-visibility: hidden;
   background-color: #ffb510;
   clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
-  content: "";
+  content: '';
   height: 100%;
   left: 0;
   position: absolute;
   top: 0;
   transform: translateZ(0);
-  transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+  transition: clip-path 0.5s cubic-bezier(0.165, 0.84, 0.44, 1),
+    -webkit-clip-path 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
   width: 100%;
 }
 

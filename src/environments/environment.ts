@@ -7,5 +7,5 @@ export const environment: IEnvironment = {
   production: false,
   enableDebugTools: true,
   logLevel: 'debug',
-  apiUrl,
+  apiUrl
 };
