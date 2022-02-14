@@ -1,10 +1,4 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  Renderer2,
-  ViewChild
-} from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { options } from './config/particles.options';
 
 declare const Typewriter: any;
@@ -39,9 +33,7 @@ export class AccueilComponent implements AfterViewInit {
       .typeString('A Full Stack Developer specialized in writing <br>Web')
       .pauseFor(300)
       .deleteChars(3)
-      .typeString(
-        '<span style="color: #ffb510;"><strong>ANGULAR</strong></span> applications '
-      )
+      .typeString('<span style="color: #ffb510;"><strong>ANGULAR</strong></span> applications ')
       .pauseFor(3000)
       .start();
   }

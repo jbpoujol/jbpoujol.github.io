@@ -12,10 +12,6 @@ const accueilRoutes: Routes = [
 ];
 @NgModule({
   declarations: [AccueilComponent],
-  imports: [
-    CommonModule,
-    NgParticlesModule,
-    RouterModule.forChild(accueilRoutes)
-  ]
+  imports: [CommonModule, NgParticlesModule, RouterModule.forChild(accueilRoutes)]
 })
 export class AccueilModule {}

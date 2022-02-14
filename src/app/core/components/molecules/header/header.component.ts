@@ -8,7 +8,9 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 })
 export class HeaderComponent {
   faGithub = faGithub;
+
   faLinkedIn = faLinkedin;
+
   @ViewChild('ham') ham: ElementRef | undefined;
 
   constructor(private renderer: Renderer2) {}
