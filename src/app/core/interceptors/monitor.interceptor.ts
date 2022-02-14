@@ -1,9 +1,4 @@
-import {
-  HttpEvent,
-  HttpHandler,
-  HttpInterceptor,
-  HttpRequest
-} from '@angular/common/http';
+import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { EnvironmentService } from '../services/environment.service';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -13,10 +8,7 @@ import { finalize } from 'rxjs/operators';
 export class MonitorInterceptor implements HttpInterceptor {
   constructor(private envService: EnvironmentService) {}
 
-  intercept(
-    request: HttpRequest<unknown>,
-    next: HttpHandler
-  ): Observable<HttpEvent<unknown>> {
+  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     if (this.envService.enableDebugTools) {
       const begin = performance.now();
       return next.handle(request).pipe(
